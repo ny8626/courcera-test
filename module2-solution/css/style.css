@@ -1,1 +1,85 @@
 
+/* * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+} */
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.menu-item {
+  width: 300px;
+  background-color: #d3d3d3; /* gray */
+  border: 1px solid #000;
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.menu-title {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 10px;
+  font-weight: bold;
+  border-left: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+/* 個別の色設定 */
+.chicken {
+  background-color: #f4a896;
+}
+
+.beef {
+  background-color: #d9534f;
+  color: white;
+}
+
+.sushi {
+  background-color: #f0db7d;
+}
+
+/* ========== レスポンシブ対応 ========== */
+
+/* 992px以上: 3つ横並び */
+@media (min-width: 992px) {
+  .menu-item {
+    width: 30%;
+  }
+}
+
+/* 768px〜991px: 最初の2つ横並び、3つ目は全幅 */
+@media (min-width: 768px) and (max-width: 991px) {
+  .menu-item {
+    width: 45%;
+  }
+
+  .menu-item:nth-child(3) {
+    width: 100%;
+  }
+}
+
+/* 767px以下: すべて縦並びで全幅 */
+@media (max-width: 767px) {
+  .menu-item {
+    width: 100%;
+  }
+}
